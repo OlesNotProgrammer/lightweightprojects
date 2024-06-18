@@ -8,7 +8,8 @@ CREATE TABLE account (
     account_id serial PRIMARY KEY,
     login varchar(50) NOT NULL,
     password varchar(200) NOT NULL,
-    email varchar(50) NOT NULL UNIQUE
+	email varchar(50) NOT NULL UNIQUE,
+    registration TIMESTAMP NOT NULL
 );
 
 -- test_data_inserter.sql
