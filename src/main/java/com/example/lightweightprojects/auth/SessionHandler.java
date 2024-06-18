@@ -16,9 +16,8 @@ public class SessionHandler {
     private final HashMap<String, Date> sessions;
     private final EncodingAlgorithm encodingAlgorithm;
 
-    public String generateToken(Account account) {
+    public String generateAuthenticationToken(Account account) {
         Date deadlock = new Date(System.currentTimeMillis() + tokenLifetime);
-
         return encodingAlgorithm.encode(account.getEmail(), deadlock);
     }
 

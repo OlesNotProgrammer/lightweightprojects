@@ -1,5 +1,9 @@
 package com.example.lightweightprojects.auth;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.NoSuchElementException;
+
 import org.springframework.stereotype.Service;
 
 import com.example.lightweightprojects.auth.model.AuthenticationRequest;
@@ -14,10 +18,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthenticationService {
     private final AccountRepository accountRepository;
-    private final EncodingAlgorithm encodingAlgorithm;
     private final SessionHandler sessionHandler;
+    private final EncodingAlgorithm encodingAlgorithm;
 
-    public AuthenticationResponce register(RegisterRequest request) {
+    public boolean register(RegisterRequest request) {
         Account account = Account.builder()
             .login(request.getLogin())
             .password(encodingAlgorithm.encode(request.getPassword(), request.getRegistration()))
@@ -26,10 +30,15 @@ public class AuthenticationService {
             .build();
         
         accountRepository.save(account);
-        return sessionHandler.generateToken(account);
+        return true;
     }
 
-    public AuthenticationResponce authenticate(AuthenticationRequest request) {
-        
+    public AuthenticationResponce authenticate(AuthenticationRequest request) throws NoSuchElementException {
+        Account account = accountRepository
+            .findByEmail(request.getEmail())
+            .orElseThrow();
+
+
+        return null;
     }
 }
