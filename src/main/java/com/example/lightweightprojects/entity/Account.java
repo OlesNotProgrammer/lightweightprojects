@@ -26,5 +26,5 @@ public class Account {
     private String login;
     private String password;
     private String email;
-    private Date registration;
+    private Date registrationDate;
 }

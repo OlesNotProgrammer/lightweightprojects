@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .xray {
+                background-color: var(--bs-primary-bg-subtle);
+                border: 1px solid var(--bs-primary-border-subtle)
+            }
+
+            html, body, .wrapper {
+                width: 100%;
+                height: 100%;
+            }
+
+            aside, main {
+                height: 100%;
+            }
+
+            aside {
+                flex-basis: 350px;
+            }
+
+            main {
+                flex-basis: 100%;
+            }
+
+            .add-board {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .add-board:active {
+                fill: var(--bs-secondary-color);
+            }
+
+            .account-settings {
+                width: 1.1rem;
+                height: 1.1rem;
+            }
+
+            .task-information {
+                flex-basis: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper d-flex align-items-stretch">
+            <aside data-bs-theme="dark">
+                <div class="container-fluid d-flex flex-column h-100 py-3 text-bg-dark">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="mb-0">Boards</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus add-board" viewBox="0 0 16 16">
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                        </svg>
+                    </div>
+                    <div class="my-3"></div>
+                    <div class="list-group rounded-0" id="list-tab" role="tablist">
+                        <button class="btn btn-dark d-flex justify-content-between align-items-center active" id="list-home-list" data-bs-toggle="list" role="tab" aria-controls="list-home">Home<span class="badge text-bg-primary rounded-pill">14</span></button>
+                        <button class="btn btn-dark d-flex justify-content-between align-items-center rounded" id="list-profile-list" data-bs-toggle="list" role="tab" aria-controls="list-profile">Profile</button>
+                        <button class="btn btn-dark d-flex justify-content-between align-items-center rounded" id="list-messages-list" data-bs-toggle="list" role="tab" aria-controls="list-messages">Messages</button>
+                        <button class="btn btn-dark d-flex justify-content-between align-items-center rounded" id="list-settings-list" data-bs-toggle="list" role="tab" aria-controls="list-settings">Settings</button>
+                    </div>
+                    <div class="my-4 border-top border-dark-subtle"></div>
+                    <button class="btn btn-dark d-flex justify-content-center align-items-center mt-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-gear account-settings" viewBox="0 0 16 16">
+                            <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+                        </svg>
+                        <span class="mb-0 ms-2">Settings</span>
+                    </button>
+                </div>
+            </aside>
+            <main>
+                <div class="container-fluid d-flex flex-column h-100 pt-3">
+                    <header class="mx-3">
+                        <ul class="xray nav nav-underline">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </header>
+                    <div class="flex-grow-1 d-flex">
+                        <div class="board flex-grow-1 rounded m-3">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                    <div class="tab-content" id="nav-tabContent">
+                                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">1</div>
+                                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">2</div>
+                                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">3</div>
+                                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">4</div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+                                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+                            </div>
+                        </div>
+                        <div class="task-information rounded m-3 p-3">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <button type="submit" class="btn btn-primary">Confirm identity</button>
+                                
+                                <!-- <div class="d-flex">
+                                    <div class="elem flex-grow-1 me-2">
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    </div>
+                                    <div class="elem">
+                                        <button type="submit" class="btn btn-primary">Confirm identity</button>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                <label for="floatingTextarea">Comments</label>
+                            </div>
+                            <input type="email" class="form-control" list="datalistOptions" id="exampleFormControlInput1" placeholder="name@example.com">
+                            
+                            <datalist id="datalistOptions">
+                                <option value="San Francisco">
+                                <option value="New York">
+                                <option value="Seattle">
+                                <option value="Los Angeles">
+                                <option value="Chicago">
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- <aside class="xray"></aside>
+            <main class="container-fluid">
+            </main> -->
+        </div>
+        <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
