@@ -12,8 +12,7 @@ DROP TABLE IF EXISTS account;
 CREATE TABLE account (
     account_id serial PRIMARY KEY,
     login varchar(50) NOT NULL,
-    password varchar(200) NOT NULL,
-    information TEXT
+    password varchar(200) NOT NULL
 );
 
 CREATE TABLE team (
